@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The quiz</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link href="./css/search.css" rel="stylesheet" type="text/css" />
+    <link href="./css/testQuiz.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Helvetica">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script
+      src="https://kit.fontawesome.com/9548ea0da7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/quizDB.js"></script>
+    <script src="./js/dataUser.js"></script>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-light bg-light justify-content-between nav fixed-top">
+      <div class="right-nav">
+      <a href="#" class="navbar-brand logo" onclick="showHome()">Quizz</a>
+      <div>
+        <a href="#" class="nav-link create-quiz" onclick="showCreateQuiz()">Create</a>
+      </div>
+      </div>
+      <div class="left_nav">                  
+                  <form class="form-inline search_nav">
+                    <div class="search-holder">
+                    <div class="icons"> <i class="fas fa-search"></i> </div>
+                    <input
+                      class="form-control mr-sm-2 box"
+                      id = "search-input"
+                      type="search"
+                      placeholder="Search.."
+                      aria-label="Search"
+                      />
+                    </div>
+                    </form>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" id="home">
+      <div id="topic-quizzes-hide">
+        <h3> Topics</h3>
+      <div class="available_quizzes">
+        <div class="row">
+          <div class="math col-sm-3 quiz_card">
+            <input
+              type="checkbox"
+              id="topic_math"
+              name="topicChoice"
+              value="math"
+              class="checkbox-inline topicChoice"
+            />
+            Math 
+          </div>
+          <div class="geography col-sm-3 quiz_card">
+            <input
+              type="checkbox"
+              id="topic_geography"
+              name="topicChoice"
+              value="geography"
+              class="checkbox-inline topicChoice"
+            />
+            Geography 
+          </div>
+          <div class="music col-sm-3 quiz_card">
+            <input
+              type="checkbox"
+              id="topic_music"
+              name="topicChoice"
+              value="music"
+              class="checkbox-inline topicChoice"
+            />
+            Music 
+          </div>
+        </div>
+        <div class="row">
+          <div class="film col-sm-3 quiz_card">
+            <input
+              type="checkbox"
+              id="topic_film"
+              name="topicChoice"
+              value="films"
+              class="checkbox-inline topicChoice"
+            />Film 
+          </div>
+          <div class="general_knowlegde col-sm-3 quiz_card">
+            <input
+              type="checkbox"
+              id="topic_generalKnowledge"
+              name="topicChoice"
+              value="general_knowledge"
+              class="checkbox-inline topicChoice"
+            />
+            General Knowledge 
+          </div>
+          <div class="sports col-sm-3 quiz_card">
+            <input
+              type="checkbox"
+              id="topic_sports"
+              name="topicChoice"
+              value="sports"
+              class="checkbox-inline topicChoice"
+            />
+            Sports 
+          </div>
+        </div>
+      </div>
+      <div class="topic-submit">
+      <button
+        class="submit-btn"
+        id="submitChoosingQuiz"
+        type="submit"
+        onclick="submitTestQuiz()"
+      >
+      Start quiz!
+      </button>
+      </div>
+    </div>
+    </div>
+      <div id="testQuiz">
+        <!-- <div>
+          Your topic is :
+          <div id="topic"></div>
+        </div> -->
+        <div id="question"></div>
+        <div id="countQuestion"></div>
+        <div class="options row">
+        <div id="choiceA" class="col-sm-4 choices"></div>
+        <div id="choiceB" class="col-sm-4 choices"></div>
+        <div id="choiceC" class="col-sm-4 choices"></div>
+        <div id="choiceD" class="col-sm-4 choices"></div>
+        </div>
+        <div class="user_answer">
+          <input
+            class="form-control"
+            type="text"
+            id="answer"
+            placeholder="Your answer here.."
+          />
+          <button
+            id="submit"
+            class="submit-btn-quiz"
+            type="submit"
+            onclick="submitQuiz()"
+          >
+            Submit
+          </button>
+          <button id="next" class="next-btn-quiz" onclick="nextFunction()">
+            Next
+          </button>
+        </div>
+      </div>
+
+      <div class="container" id="user-quizzes">
+        <div id="empty-quiz">
+          <h3> Your quizzes </h3>
+            <p>You do not have any quizzes.
+            <span><a href="#" class="create-quiz" onclick="showCreateQuiz()"> Create new one .. </a> </span> </p>
+        </div>
+        
+        <div id="available-user-quizzes"> 
+          <h3> Your quizzes </h3> 
+          <div class="row">
+          </div>             
+            <div class="topic-submit">
+            <button
+              class="submit-btn"
+              id="submitChoosingQuiz"
+              type="submit"
+              onclick="submitTestQuiz()"
+            >
+              why is this button here? 
+            </button>
+            </div>
+         
+
+        </div>
+
+          <div id="testQuiz">
+            <!-- <div>
+          Your topic is :
+          <div id="topic"></div>
+          </div> -->
+            <div id="question"></div>
+            <div id="countQuestion"></div>
+            <div id="choiceA" class="choices"></div>
+            <div id="choiceB" class="choices"></div>
+            <div id="choiceC" class="choices"></div>
+            <div id="choiceD" class="choices"></div>
+            <div class="user_answer">
+              <input
+                class="form-control"
+                type="text"
+                id="answer"
+                placeholder="Your answer here.."
+              />
+              <button
+                id="submit-btn"
+                class="btn"
+                type="submit"
+                onclick="submitQuiz()"
+              >
+                Submit
+              </button>
+              <button id="next" class="next-btn-quiz" onclick="nextFunction()">
+                Next
+              </button> 
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container" id="create-quiz">
+      <form action="#">
+        <div class="form-group">
+          <label class="control-label">Topic</label>
+          <input
+            id="topic-CQ"
+            type="text"
+            class="form-control"
+            placeholder="Enter your topic's name"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Question</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter your question"
+            id="question-CQ"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Choices</label>
+          <div>
+            <input
+              id="choiceA-CQ"
+              type="text"
+              class="form-control input-lg"
+              value=""
+              placeholder="Choice A"
+            />
+            <input
+              id="choiceB-CQ"
+              type="text"
+              class="form-control input-lg"
+              value=""
+              placeholder="Choice B"
+            />
+            <input
+              id="choiceC-CQ"
+              type="text"
+              class="form-control input-lg"
+              value=""
+              placeholder="Choice C"
+            />
+            <input
+              id="choiceD-CQ"
+              type="text"
+              class="form-control input-lg"
+              value=""
+              placeholder="Choice D"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-group">
+            <label class="control-label">Correct answer</label>
+            <div>
+              <input
+                id="answer-create-quiz"
+                type="text"
+                class="form-control input-lg"
+                value=""
+                placeholder="Enter the correct answer"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+            id="submit-btn"
+            class="btn"
+            type="submit"
+            onclick="addQues()"
+            >
+            Add question
+            </button>
+            <button id="next" class="next-btn-quiz" onclick="addQuiz()">
+            Finish topic
+            </button> 
+          </div>
+        </div>
+      </form>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Question</th>
+            <th scope="col">Choice A</th>
+            <th scope="col">Choice B</th>
+            <th scope="col">Choice C</th>
+            <th scope="col">Choice D</th>
+            <th scope="col">Correct answer</th>
+          </tr>
+        </thead>
+        <tbody id="question-list"></tbody>
+      </table>
+    </div>
+    <div class="container" id="search-file">
+      
+    </div>
+
+    <div class="footer">
+      <div class="row">
+          <div class="col-sm-6 about-us">
+          <h5>About us</h5>
+          <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt
+            vel voluptatem nobis quae quibusdam eos et nemo magnam debitis
+            placeat exercitationem perferendis.
+          </div>
+        </div>
+          <div class="col-sm-6 contact-us">
+          <h5>Contact us</h5>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+     <script src="./js/searchQuiz.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

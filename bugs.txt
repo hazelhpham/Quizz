@@ -1,0 +1,24 @@
+
+
+
+- Search: 
+    after typing the result, press enter -> show out the notification when quiz does not exist
+    (?) what effect do you want it to appear?
+
+
+- after logging in, the page index.html is not there in the most organized form. 
+
+- when doing the quiz, the panel looks ugly as fuck. 
+- organize the options
+
+
+
+- when pressing on the flashcard
+    bỏ tickbox đi
+    cho 1 đường hover ở dưới flashcard very subtle and minimal 
+    when u click on it -> automatically runs the quiz
+    show how many questions 
+
+
+
+    - ghép user-quizzes vào với topic-quizzes-hide
