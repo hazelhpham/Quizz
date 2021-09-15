@@ -6,4 +6,4 @@
 - Quiz Website helps users test their knowlegde in different general topics, such as Math, History, etc. Also, users can combine the topics, randomize the sets of questions
 
 # link website
-https://hazelhpham.github.io/Quiz/
+https://hazelhpham.github.io/Quizz/
